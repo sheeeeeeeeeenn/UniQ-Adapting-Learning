@@ -1,0 +1,258 @@
+body,
+html {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    display: flex;
+}
+
+.sidebar {
+    width: 200px;
+    background-color: #333;
+    color: white;
+    min-height: 100vh;
+    padding: 20px 0;
+}
+
+.sidebar ul {
+    list-style: none;
+    padding: 0;
+}
+
+.sidebar ul li a {
+    color: white;
+    text-decoration: none;
+    display: block;
+    padding: 10px 20px;
+}
+
+.sidebar ul li a:hover {
+    background-color: #555;
+}
+
+.main-content {
+    flex-grow: 1;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.container {
+    width: 100%;
+    /* Adjust width for internal container */
+    margin: 0 auto;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.header h1 {
+    color: #333;
+    text-align: center;
+}
+.input-fields {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 10px;
+    margin-bottom: 10px;
+    padding: 10px;
+    background-color: #f7f7f7;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.field {
+    display: flex;
+    flex-direction: column;
+}
+
+
+.field-student-name {
+    padding: 8px;
+    margin: 0 auto 8px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 300px;
+    
+}
+
+label {
+    font-size: 14px;
+    color: #666;
+    margin-bottom: 5px;
+}
+
+input[type="text"],
+input[type="number"] {
+    width: 100%;
+    padding: 12px;
+    border: 2px solid #ccc;
+    border-radius: 5px;
+    transition: border-color 0.3s ease;
+    background-color: #fff;
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+input[type="text"]:focus,
+input[type="number"]:focus {
+    border-color: #007BFF;
+    outline: none;
+}
+button {
+    display: block;
+    width: max-content;
+    margin: 10px auto;
+    padding: 10px 15px;
+    font-size: 16px;
+    color: white;
+    background-color: #007BFF;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+.chart-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    text-align: center;
+}
+
+.chart {
+    flex: 1 1 30%;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.results {
+    flex-basis: 100%;
+    padding: 20px;
+    background-color: #eee;
+    border: 1px solid #ccc;
+}
+
+canvas {
+    width: 100%;
+    max-width: 100%;
+}
+
+.toaster {
+    position: fixed;
+    top: 50%;
+    left: 50%; 
+    transform: translate(-50%, -50%);
+    display: none;
+    padding: 10px 30px;
+    color: #fff;
+    background-color: #333;
+    border-radius: 5px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+    text-align: center;
+    z-index: 1000;
+}
+
+.toaster.show {
+    display: block;
+    animation: slideIn 0.5s, slideOut 0.5s 3s;
+}
+
+@keyframes slideIn {
+    from {
+        transform: translate(-50%, -60%);
+        opacity: 0;
+    }
+
+    to {
+        transform: translate(-50%, -50%);
+        opacity: 1;
+    }
+}
+
+@keyframes slideOut {
+    from {
+        transform: translate(-50%, -50%);
+        opacity: 1;
+    }
+
+    to {
+        transform: translate(-50%, -60%);
+        
+        opacity: 0;
+    }
+}
+
+@keyframes slideIn {
+    from {
+        bottom: 10px;
+        opacity: 0;
+    }
+
+    to {
+        bottom: 20px;
+        opacity: 1;
+    }
+}
+
+@keyframes slideOut {
+    from {
+        bottom: 20px;
+        opacity: 1;
+    }
+
+    to {
+        bottom: 10px;
+        opacity: 0;
+    }
+}
+
+.sidebar-title h2 {
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    margin: 0;
+    
+    
+}
+
+.sidebar {
+    width: 350px;
+    background-color: #41B8D5;
+    color: white;
+    min-height: 100vh;
+    padding: 10px;
+    text-align: center;
+}
+
+.sidebar ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    
+}
+
+.sidebar ul li {
+    margin-bottom: 30px;
+}
+
+.sidebar ul li a {
+    color: white;
+    text-decoration: none;
+    display: block;
+    padding: 10px 20px;
+    background-color: #41B8D5; 
+    transition: background-color 0.3s ease, transform 0.3s ease;
+
+}
+
+.sidebar ul li a:hover {
+    background-color: #3399ab;
+    transform: scale(1.05);
+}
+

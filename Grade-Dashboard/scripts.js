@@ -207,3 +207,25 @@ function showGradesToaster() {
         setTimeout(() => { toaster.style.display = 'none'; }, 3000);
     }
 }
+
+// export to excel
+
+function exportToExcel() {
+    const wb = XLSX.utils.book_new(); 
+    const ws_name = "Student Grades";
+
+    
+    let data = [['Student Name', 'Module Grade', 'Video Grade', 'Text Chat Grade', 'Meeting Grade', 'Average Grade', 'Best Category']];
+    students.forEach(student => {
+        const grades = student.grades;
+        const average = calculateAverage(Object.values(grades)).toFixed(2);
+        const bestCategory = getBestCategory(grades);
+        data.push([student.name, grades.Module, grades.Video, grades.TextChat, grades.Meeting, average, bestCategory]);
+    });
+
+    const ws = XLSX.utils.aoa_to_sheet(data); 
+
+    XLSX.utils.book_append_sheet(wb, ws, ws_name); 
+    XLSX.writeFile(wb, "StudentGrades.xlsx"); 
+}
+
